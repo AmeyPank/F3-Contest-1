@@ -47,7 +47,6 @@ function addEmployee(e) {
     document.querySelector('form').reset();
 }
 
-// Create a function to render the employee list in the DOM
 function renderEmployeeList(e) {
     // Clear the existing employee list
     employeeList.innerHTML = '';
@@ -55,41 +54,44 @@ function renderEmployeeList(e) {
     // Create a new list item for each employee
     employees.forEach(employee => {
         const divs = document.createElement('div');
-        divs.innerHTML = `${employee.id}. Name: ${employee.name} Profession: ${employee.profession} Age: ${employee.age}`;
-        divs.style.border = "1px solid white"
-        divs.style.borderRadius = "20px"
-        divs.style.width = "35rem"
-        divs.style.height="3rem"
+        divs.innerHTML = ` 
+        <div class="employees">
+        <div class="employees-details">
+            <span>${employee.id}.</span>
+            <span>Name: ${employee.name}</span>
+            <span>Profession: ${employee.profession}</span>
+            <span>Age: ${employee.age}</span> 
+        </div>
+        <button id="del-btn-${employee.id}" data-id="${employee.id}" class="delete-button">Delete</button>
+        </div>`;
+        // divs.style.border = "1px solid white"
+        // divs.style.borderRadius = "20px"
+        // divs.style.width = "35rem"
+        // divs.style.height="3rem"
 
-        // Add a delete button to each employee list item
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
+        // Append each employee's details and delete button to the employeeList
+        employeeList.appendChild(divs);
 
+    });
 
+    const deleteButtons = document.querySelectorAll('.delete-button');
 
-
+    deleteButtons.forEach(deleteButton => {
         deleteButton.addEventListener('click', () => {
+            const empId = deleteButton.dataset.id;
+
             // Find the index of the employee in the array
-            const index = employees.findIndex(e => e.id === employee.id);
+            const index = employees.findIndex(e => e.id === empId);
 
             // Remove the employee from the array
             employees.splice(index, 1);
-           
+
             // Update the list of employees
             renderEmployeeList();
-            
         });
-
-
-        
-        
-        employeeList.appendChild(divs);
-        employeeList.appendChild(deleteButton);
-        
-        
-
     });
 }
+
 
 // Add an event listener to the Add Employee button
 const addEmployeeButton = document.querySelector('#add-employee');
@@ -99,8 +101,12 @@ addEmployeeButton.addEventListener('click', addEmployee);
 
 
 
-
-// `${ employee.id }. & nbsp & nbsp Name: ${ employee.name }
-//  & nbsp & nbsp Profession: ${ employee.profession } 
-//  & nbsp & nbsp Age: ${ employee.age } & nbsp & nbsp 
-//  < button class="delete-employee" data - id="${employee.id}"> Delete User</button > `;
+{/* <div class="emp-card">
+<div class="details">
+    <span>${user.id}.</span>
+    <span>Name: ${user.name}</span>
+    <span>Profession: ${user.profession}</span>
+    <span>Age: ${user.age}</span> 
+</div>
+<button id="del-user-btn" onclick="deleteUser(${user.id})">Delete User</button>
+</div> */}

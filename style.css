@@ -33,19 +33,61 @@ body{
     margin-bottom: 20px;
   }
   .error{
-    color: red;
+    color: rgb(244, 11, 11);
     margin-bottom: 10px;
   }
 
   .success {
-    color: green;
+    color: rgb(108, 248, 108);
     margin-bottom: 10px;
   }
 
- button{
+ /* button{
     border-radius: 10px;
+} */
+
+
+
+/* .employees{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 15px;
+    /* border: 1px solid white;
+    padding: 10px 0px;
+
+}*/
+.employees{
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px;
+    margin-top: 20px;
+    /* width: fit-content; */
 }
-#employee-list{
+.employees-details{
+    border: 1px solid white;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 25px;
+    border-radius: 6px;
+    width: 45rem;
+    height: 3.5rem;
+}
+.delete-button{
+
+    padding: 6px 20px;
+    border-radius: 20px;
+    height: 2.5rem;
+    border:none;
+    cursor: pointer;
+}
+
+
+/* #employee-list{
 
 }
 #employee-list div{
@@ -60,7 +102,7 @@ position: relative;
     border-radius: 50px;
     width: 8rem;
     height: 42px;
-}
+} */
 
   /* For screens smaller than 850px
   @media (max-width: 850px) {
