@@ -86,10 +86,10 @@ body{
     cursor: pointer;
 }
 
-
-/* #employee-list{
-
+ #employee-list p{
+ color: rgb(83, 89, 97);
 }
+/*
 #employee-list div{
 
 position: relative;
