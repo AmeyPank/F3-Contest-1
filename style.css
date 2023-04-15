@@ -1,0 +1,84 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 50px;
+    
+  } 
+  h4{
+    font-size: 24px;
+    font-weight: 100px;
+    margin-bottom: 40px;
+  }
+  
+ 
+  .row input{
+    background-color: black;
+    border: 1px solid lightgray;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 0%;
+    color: lightgray;
+
+    
+  }
+  .row label{
+    margin-bottom: 10px;
+  }
+  #add-employee{
+    border-radius: 0%;
+    margin-bottom: 20px;
+  }
+  .error{
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .success {
+    color: green;
+    margin-bottom: 10px;
+  }
+
+ button{
+    border-radius: 10px;
+}
+#employee-list{
+
+}
+#employee-list div{
+
+position: relative;
+    width: 60rem;
+    border-radius: 10px;
+}
+#employee-list button{
+    position: relative;
+    margin-left: 20px;
+    border-radius: 50px;
+    width: 8rem;
+    height: 42px;
+}
+
+  /* For screens smaller than 850px
+  @media (max-width: 850px) {
+    /* CSS styles here
+    body {
+      font-size: 14px;
+      
+    }
+    .container {
+      margin: 10px;
+      overflow-x: hidden;
+    }
+    .input-container {
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 10px;
+    }
+    .info-container input {
+      width: 100%;
+    }
+    
+  } */
