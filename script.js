@@ -8,7 +8,6 @@ const professionInput = document.querySelector('#profession');
 const ageInput = document.querySelector('#age');
 const error = document.querySelector('#error');
 const container = document.getElementById('employeeContainer');
-// const employeeDiv = document.getElementById('#emp-list')
 
 // Get a reference to the employee list div
 const employeeList = document.querySelector('#employee-list');
@@ -18,7 +17,6 @@ function addEmployee(e) {
     e.preventDefault();
     // Validate that all required fields are filled in
 
-    // Display a success message
     if (nameInput.value.trim() === '' || professionInput.value.trim() === '' || ageInput.value.trim() === '') {
         document.getElementById('error-message').textContent = 'Error : Please Make sure All the fields are filled before adding in an employee !';
         document.getElementById('success-message').textContent = '';
@@ -41,10 +39,11 @@ function addEmployee(e) {
     ageInput.value = '';
 
     // Update the list of employees
-    renderEmployeeList();
+  
     document.getElementById('success-message').textContent = 'Success : Employee Added!';
     document.getElementById('error-message').textContent = '';
     document.querySelector('form').reset();
+    renderEmployeeList();
 }
 
 function renderEmployeeList(e) {
@@ -64,10 +63,6 @@ function renderEmployeeList(e) {
         </div>
         <button id="del-btn-${employee.id}" data-id="${employee.id}" class="delete-button">Delete</button>
         </div>`;
-        // divs.style.border = "1px solid white"
-        // divs.style.borderRadius = "20px"
-        // divs.style.width = "35rem"
-        // divs.style.height="3rem"
 
         // Append each employee's details and delete button to the employeeList
         employeeList.appendChild(divs);
@@ -78,7 +73,7 @@ function renderEmployeeList(e) {
 
     deleteButtons.forEach(deleteButton => {
         deleteButton.addEventListener('click', () => {
-            const empId = deleteButton.dataset.id;
+            const empId = parseInt(deleteButton.dataset.id);
 
             // Find the index of the employee in the array
             const index = employees.findIndex(e => e.id === empId);
@@ -97,16 +92,3 @@ function renderEmployeeList(e) {
 const addEmployeeButton = document.querySelector('#add-employee');
 addEmployeeButton.addEventListener('click', addEmployee);
 
-
-
-
-
-{/* <div class="emp-card">
-<div class="details">
-    <span>${user.id}.</span>
-    <span>Name: ${user.name}</span>
-    <span>Profession: ${user.profession}</span>
-    <span>Age: ${user.age}</span> 
-</div>
-<button id="del-user-btn" onclick="deleteUser(${user.id})">Delete User</button>
-</div> */}
